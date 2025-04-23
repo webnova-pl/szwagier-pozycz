@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-primary-100: #ffd006;
+  --color-dark-100: #000000;
+  --color-theme-gray-100: #a9a9a9;
+  --color-theme-gray-200: #3d3d3d;
+  --color-theme-gray-300: #5d5d5d;
+  --color-theme-gray-400: #f9f9f9;
+}
+
+@layer base {
+  .container {
+    @apply mx-auto;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}

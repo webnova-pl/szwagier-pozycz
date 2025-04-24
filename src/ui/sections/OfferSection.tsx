@@ -13,7 +13,7 @@ const OfferSection = () => {
               Dlaczego warto pożyczać u szwagra?
             </h2>
           </div>
-          <div className="flex space-x-4 max-md:hidden justify-center w-full">
+          <div className="flex space-x-4 max-md:hidden justify-center max-md:w-full">
             <button className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
               Wynajmij sprzęt
             </button>
@@ -130,7 +130,7 @@ const OfferSection = () => {
           <img
             src="./guy.png"
             alt=""
-            className="absolute -bottom-[22%] md:-bottom-[20%] right-0 w-[340px]"
+            className="absolute -bottom-[22%] md:-bottom-[25%] right-0 w-[340px]"
           />
         </div>
       </div>

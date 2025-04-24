@@ -27,11 +27,11 @@ const AboutUsSection = () => {
             // className="max-w-[600px]"
             className="text-base"
           />
-          <div className="flex space-x-4 mt-10 w-full">
-            <button className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full">
+          <div className="flex space-x-4 mt-10 max-md:w-full">
+            <button className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
               Wynajmij sprzęt
             </button>
-            <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full">
+            <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
               Skontaktuj się
             </button>
           </div>

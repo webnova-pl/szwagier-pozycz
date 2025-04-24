@@ -3,15 +3,20 @@ import React from "react";
 const AboutUsSection = () => {
   return (
     <section className="bg-theme-gray-400">
-      <div className="container flex py-28">
+      <div className="container flex flex-col md:flex-row max-md:px-6 py-28">
         <div className="flex-1">
-          <img src="./about-us-img.png" alt="" className="rounded-[10px]" />
+          <img
+            src="./about-us-img.png"
+            alt=""
+            className="rounded-[10px] hidden md:block"
+          />
+          <img src="./about-us-mobile.png" alt="" className="block md:hidden" />
         </div>
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="flex-1 flex flex-col max-md:mt-12 justify-center">
           <span className="text-theme-gray-100 font-medium uppercase text-[20px]  ">
             O NAS
           </span>
-          <h2 className="font-bold text-[40px] leading-[128%] mb-4 mt-6">
+          <h2 className="font-bold text-[32px] md:text-[40px] leading-[128%] mb-4 mt-6">
             Poznaj swojego <br /> niezawodnego Szwagra!
           </h2>
           <p
@@ -22,11 +27,11 @@ const AboutUsSection = () => {
             // className="max-w-[600px]"
             className="text-base"
           />
-          <div className="flex space-x-4 mt-10">
-            <button className="bg-primary-100 font-bold rounded-[40px] py-4 px-6 cursor-pointer">
+          <div className="flex space-x-4 mt-10 w-full">
+            <button className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full">
               Wynajmij sprzęt
             </button>
-            <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 px-6 cursor-pointer">
+            <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full">
               Skontaktuj się
             </button>
           </div>

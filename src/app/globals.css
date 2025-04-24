@@ -16,7 +16,7 @@
 
 @layer base {
   .container {
-    @apply mx-auto;
+    @apply mx-auto md:px-4;
   }
 }
 

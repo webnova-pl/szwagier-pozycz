@@ -10,19 +10,19 @@ import FileIcon from "../icons/FileIcon";
 const EquipmentSection = () => {
   return (
     <section className="py-20">
-      <div className="container">
+      <div className="container max-md:px-6">
         <div className="flex flex-col items-center">
           <span className="text-theme-gray-100 font-medium uppercase text-[20px]  ">
             nasz sprzęt
           </span>
-          <h2 className="font-bold text-[40px] leading-[128%] my-4">
+          <h2 className="font-bold text-[40px] max-md:text-center leading-[128%] my-4">
             Co znajdziesz u szwagra?
           </h2>
-          <p className="text-base font-medium">
+          <p className="text-base font-medium max-md:text-center">
             Mamy wszystko, co potrzebne do sprzątania i majsterkowania!
           </p>
         </div>
-        <div className="my-16 flex flex-col md:flex-row space-x-8 justify-between">
+        <div className="my-16 flex flex-col md:flex-row max-md:space-y-8 md:space-x-8 justify-between">
           {/* sprzet czyczczacy */}
 
           <div className="rounded-[20px] overflow-hidden flex-1 flex flex-col max-w-[450px]">
@@ -79,16 +79,16 @@ const EquipmentSection = () => {
           </div>
         </div>
         <div>
-          <div className="flex space-x-4 mt-10 justify-center">
-            <button className="bg-primary-100 font-bold rounded-[40px] py-4 px-6 cursor-pointer">
+          <div className="flex space-x-4 mt-10 justify-center w-full">
+            <button className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
               Wynajmij sprzęt
             </button>
-            <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 px-6 cursor-pointer">
+            <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
               Skontaktuj się
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-4 mt-40 mb-20 space-x-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 mt-40 mb-20 md:space-x-8 max-md:space-y-10">
           {/* Bez kaucji */}
 
           <div className="flex flex-col items-center">
@@ -97,7 +97,7 @@ const EquipmentSection = () => {
             </div>
             <h4 className="font-bold text-2xl my-4">Bez kaucji</h4>
             <p className="text-base text-center font-medium">
-              Przy umowie wynajmu nie pobieramy kaucji.
+              Przy umowie wynajmu <br /> nie pobieramy kaucji.
             </p>
           </div>
 
@@ -109,7 +109,7 @@ const EquipmentSection = () => {
             </div>
             <h4 className="font-bold text-2xl my-4">Transport sprzętu</h4>
             <p className="text-base text-center font-medium">
-              Dowozimy od i do klienta na terenie Rzeszowa.
+              Dowozimy od i do klienta <br /> na terenie Rzeszowa.
             </p>
           </div>
 
@@ -121,7 +121,7 @@ const EquipmentSection = () => {
             </div>
             <h4 className="font-bold text-2xl my-4">Dokładny instruktaż</h4>
             <p className="text-base text-center font-medium">
-              Tłumaczymy i dołączamy instrukcję obsługi.
+              Tłumaczymy i dołączamy <br /> instrukcję obsługi.
             </p>
           </div>
 
@@ -133,7 +133,7 @@ const EquipmentSection = () => {
             </div>
             <h4 className="font-bold text-2xl my-4">Faktura VAT</h4>
             <p className="text-base text-center font-medium">
-              Na życzenie klienta wystawiamy fakturę VAT.
+              Na życzenie klienta <br /> wystawiamy fakturę VAT.
             </p>
           </div>
         </div>

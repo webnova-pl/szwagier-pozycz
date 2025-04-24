@@ -2,9 +2,9 @@ import React from "react";
 
 const OfferSection = () => {
   return (
-    <section className="bg-theme-gray-400 pt-20 pb-10">
-      <div className="container">
-        <div className="flex justify-between items-center ">
+    <section className="bg-theme-gray-400 pt-20 md:pb-10 pb-40">
+      <div className="container max-md:px-6">
+        <div className="flex flex-col md:flex-row justify-between items-center ">
           <div className="flex flex-col">
             <span className="text-theme-gray-100 font-medium uppercase text-[20px]  ">
               O NAS
@@ -13,19 +13,19 @@ const OfferSection = () => {
               Dlaczego warto pożyczać u szwagra?
             </h2>
           </div>
-          <div className="flex space-x-4  justify-center">
-            <button className="bg-primary-100 font-bold rounded-[40px] py-4 px-6 cursor-pointer">
+          <div className="flex space-x-4 max-md:hidden justify-center w-full">
+            <button className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
               Wynajmij sprzęt
             </button>
-            <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 px-6 cursor-pointer">
+            <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
               Skontaktuj się
             </button>
           </div>
         </div>
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-8 space-y-20 relative">
+        <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-8 space-y-20 relative">
           {/* 1 */}
           <div>
-            <h4 className="font-bold text-base leading-tight">
+            <h4 className="font-bold text-xl max-md:text-2xl leading-tight">
               Szwagier <br />
               <span className="bg-primary-100 block mt-1 w-fit px-3 rounded-full py-1">
                 dba
@@ -40,7 +40,7 @@ const OfferSection = () => {
 
           {/* 2 */}
           <div>
-            <h4 className="font-bold text-base leading-tight">
+            <h4 className="font-bold text-xl max-md:text-2xl leading-tight">
               Szwagier <br />
               <span className="bg-primary-100 block mt-1 w-fit px-3 rounded-full py-1">
                 zna się
@@ -53,7 +53,7 @@ const OfferSection = () => {
 
           {/* 3 */}
           <div>
-            <h4 className="font-bold text-base leading-tight">
+            <h4 className="font-bold text-xl max-md:text-2xl leading-tight">
               Do szwagra <br />
               <span className="bg-primary-100 block mt-1 w-fit px-3 rounded-full py-1">
                 jest blisko
@@ -68,7 +68,7 @@ const OfferSection = () => {
 
           {/* 4 */}
           <div>
-            <h4 className="font-bold text-base leading-tight">
+            <h4 className="font-bold text-xl max-md:text-2xl leading-tight">
               U szwagra <br />
               <span className="bg-primary-100 block mt-1 w-fit px-3 rounded-full py-1">
                 jest taniej
@@ -83,7 +83,7 @@ const OfferSection = () => {
 
           {/* 5 */}
           <div>
-            <h4 className="font-bold text-base leading-tight">
+            <h4 className="font-bold text-xl max-md:text-2xl leading-tight">
               Szwagier <br />
               <span className="bg-primary-100 block mt-1 w-fit px-3 rounded-full py-1">
                 doradzi
@@ -98,7 +98,7 @@ const OfferSection = () => {
 
           {/* 6 */}
           <div>
-            <h4 className="font-bold text-base leading-tight">
+            <h4 className="font-bold text-xl max-md:text-2xl leading-tight">
               U szwagra <br />
               <span className="bg-primary-100 block mt-1 w-fit px-3 rounded-full py-1">
                 jest elastycznie
@@ -113,7 +113,7 @@ const OfferSection = () => {
 
           {/* 7 */}
           <div>
-            <h4 className="font-bold text-base leading-tight">
+            <h4 className="font-bold text-xl max-md:text-2xl leading-tight">
               U szwagra <br />
               <span className="bg-primary-100 block mt-1 w-fit px-3 rounded-full py-1">
                 jest wesoło
@@ -130,7 +130,7 @@ const OfferSection = () => {
           <img
             src="./guy.png"
             alt=""
-            className="absolute -bottom-[20%] right-0 w-[340px]"
+            className="absolute -bottom-[22%] md:-bottom-[20%] right-0 w-[340px]"
           />
         </div>
       </div>

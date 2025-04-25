@@ -2,10 +2,6 @@ import React from "react";
 import CleaningIcon from "../icons/CleaningIcon";
 import WrenchIcon from "../icons/WrenchIcon";
 import LightningIcon from "../icons/LightningIcon";
-import HandCoinsIcon from "../icons/HandCoinsIcon";
-import CarIcon from "../icons/CarIcon";
-import LadderIcon from "../icons/LadderIcon";
-import FileIcon from "../icons/FileIcon";
 
 const EquipmentSection = () => {
   return (
@@ -86,55 +82,6 @@ const EquipmentSection = () => {
             <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
               Skontaktuj się
             </button>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-4 mt-40 mb-20 md:space-x-8 max-md:space-y-10">
-          {/* Bez kaucji */}
-
-          <div className="flex flex-col items-center">
-            <div>
-              <HandCoinsIcon />
-            </div>
-            <h4 className="font-bold text-2xl my-4">Bez kaucji</h4>
-            <p className="text-base text-center font-medium">
-              Przy umowie wynajmu <br /> nie pobieramy kaucji.
-            </p>
-          </div>
-
-          {/* Transport */}
-
-          <div className="flex flex-col items-center">
-            <div>
-              <CarIcon />
-            </div>
-            <h4 className="font-bold text-2xl my-4">Transport sprzętu</h4>
-            <p className="text-base text-center font-medium">
-              Dowozimy od i do klienta <br /> na terenie Rzeszowa.
-            </p>
-          </div>
-
-          {/* Instruktaz */}
-
-          <div className="flex flex-col items-center">
-            <div>
-              <LadderIcon />
-            </div>
-            <h4 className="font-bold text-2xl my-4">Dokładny instruktaż</h4>
-            <p className="text-base text-center font-medium">
-              Tłumaczymy i dołączamy <br /> instrukcję obsługi.
-            </p>
-          </div>
-
-          {/* Faktura VAT */}
-
-          <div className="flex flex-col items-center">
-            <div>
-              <FileIcon />
-            </div>
-            <h4 className="font-bold text-2xl my-4">Faktura VAT</h4>
-            <p className="text-base text-center font-medium">
-              Na życzenie klienta <br /> wystawiamy fakturę VAT.
-            </p>
           </div>
         </div>
       </div>

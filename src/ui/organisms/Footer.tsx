@@ -1,7 +1,11 @@
 import Link from "next/link";
 import React from "react";
 
-const Footer = () => {
+interface FooterProps {
+  withoutRentButton?: boolean;
+}
+
+const Footer: React.FC<FooterProps> = ({ withoutRentButton = false }) => {
   return (
     <footer className="bg-primary-100 relative z-20">
       <div className="relative ">
@@ -22,9 +26,11 @@ const Footer = () => {
             />
 
             <div className="flex space-x-4 w-full">
-              <button className="bg-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer text-dark-100 max-md:w-full">
-                Wynajmij sprzęt
-              </button>
+              {!withoutRentButton && (
+                <button className="bg-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer text-dark-100 max-md:w-full">
+                  Wynajmij sprzęt
+                </button>
+              )}
               <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
                 Skontaktuj się
               </button>

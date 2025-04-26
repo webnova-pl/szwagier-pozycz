@@ -1,12 +1,12 @@
 
-import DeviceSection from "@/ui/sections/DeviceSection";
+import RentalItemsSection from "@/ui/sections/RentalItemsSection";
 import IconsSection from "@/ui/sections/IconsSection";
 import OfferSection from "@/ui/sections/OfferSection";
 
 export default function Rent() {
   return (
     <main className=" ">
-      <DeviceSection></DeviceSection>
+      <RentalItemsSection></RentalItemsSection>
       <IconsSection />
       <OfferSection withRentButton={false} />
         <div className="flex justify-end p-4 fixed md:hidden bg-white bottom-0 w-full">

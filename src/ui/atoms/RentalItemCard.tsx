@@ -2,21 +2,10 @@ import React from "react";
 import CircleIcon from "../icons/CircleIcon";
 import TriangleIcon from "../icons/TraiangleIcon";
 import TransportIcon from "../icons/TransportIcon";
+import { RentalItem } from "@/API/models/RentalItem";
 
-// Simplified type definitions for device item props
-export interface DeviceItemProps {
-  id: string;
-  image: string;
-  name: string;
-  description: string;
-  dailyPrice: string;
-  weekendPrice?: string;
-  transportPrice: string;
-  nextDayPrice?: string;
-}
-
-const DeviceItem: React.FC<DeviceItemProps> = ({
-  image,
+const DeviceItem: React.FC<RentalItem> = ({
+  mainPhoto,
   name,
   description,
   dailyPrice,
@@ -28,17 +17,18 @@ const DeviceItem: React.FC<DeviceItemProps> = ({
     <div className="flex flex-col md:flex-row gap-8 py-8 md:px-8 px-4 bg-white rounded-lg border-2 border-[#f2f2f2]">
       {/* Device image */}
       <div className="w-full md:w-64 flex-shrink-0 mb-4 md:mb-0 ">
-        <img src={image} alt={name} className="max-w-full h-auto" />
+        <img src={mainPhoto} alt={name} className="max-w-full h-auto" />
       </div>
 
       {/* Device details */}
-      <div className="flex-grow md:ml-6">
-        {/* Device title */}
-        <h2 className="text-xl font-bold mb-2">{name}</h2>
+      <div className="flex-grow flex flex-col justify-between md:ml-6">
+        <div>
+          {/* Device title */}
+          <h2 className="text-xl font-bold mb-2">{name}</h2>
 
-        {/* Device description */}
-        <p className="mb-4 text-sm font-medium">{description}</p>
-
+          {/* Device description */}
+          <p className="mb-4 text-sm font-medium">{description}</p>
+        </div>
         <div className="flex justify-between">
           {/* Rental information */}
           <div className="mb-4">
@@ -75,7 +65,8 @@ const DeviceItem: React.FC<DeviceItemProps> = ({
               <div className="flex items-start gap-2">
                 <TransportIcon></TransportIcon>
                 <div className="text-sm">
-                  Transport (Rzeszów): <p className="font-bold">{transportPrice}</p>
+                  Transport (Rzeszów):{" "}
+                  <p className="font-bold">{transportPrice}</p>
                 </div>
               </div>
             </div>

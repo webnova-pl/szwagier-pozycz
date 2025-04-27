@@ -1,3 +1,4 @@
+import { links } from "@/constants";
 import Link from "next/link";
 import React from "react";
 
@@ -14,12 +15,20 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex space-x-4 max-md:w-full">
-        <button className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap">
+        <a
+          href={links.rental}
+          className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center"
+          aria-label="Przejdź do strony wynajmu"
+        >
           Wynajmij sprzęt
-        </button>
-        <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap">
+        </a>
+        <a
+          href={links.contactPage}
+          className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center"
+          aria-label="Przejdź do strony kontaktowej"
+        >
           Skontaktuj się
-        </button>
+        </a>
       </div>
     </header>
   );

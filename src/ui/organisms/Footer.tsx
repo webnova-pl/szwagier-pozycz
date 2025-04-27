@@ -1,3 +1,4 @@
+import { links } from "@/constants";
 import Link from "next/link";
 import React from "react";
 
@@ -27,13 +28,21 @@ const Footer: React.FC<FooterProps> = ({ withoutRentButton = false }) => {
 
             <div className="flex space-x-4 w-full">
               {!withoutRentButton && (
-                <button className="bg-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer text-dark-100 max-md:w-full">
+                <a
+                  href={links.rental}
+                  className="bg-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer text-dark-100 max-md:w-full text-center"
+                  aria-label="Przejdź do strony wynajmu"
+                >
                   Wynajmij sprzęt
-                </button>
+                </a>
               )}
-              <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
+              <a
+                href={links.contactPage}
+                className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full text-center"
+                aria-label="Przejdź do strony kontaktowej"
+              >
                 Skontaktuj się
-              </button>
+              </a>
             </div>
           </div>
           {/* <div className="flex-1 flex justify-end"> */}
@@ -50,9 +59,14 @@ const Footer: React.FC<FooterProps> = ({ withoutRentButton = false }) => {
         <div className="container flex flex-col max-md:items-center md:flex-row justify-between">
           <div className="flex flex-col md:flex-row md:space-x-8 max-md:space-y-4">
             <span>Szwagier Pożycz 2025</span>
-            <Link href="/polityka-prywatnosci">Polityka Prywatności</Link>
+            <Link href={links.privacyPolicy}>Polityka Prywatności</Link>
           </div>
-          <div className="max-md:mt-4">Design by Daria Pyziak</div>
+          <div className="max-md:mt-4">
+            Designed by{" "}
+            <a href="https://www.dariapyziakdesign.pl/pl">
+              Daria Pyziak Design
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -23,6 +23,7 @@ const HeroSection = () => {
           <a
             href=""
             className=" text-theme-gray-300 font-bold text-base flex space-x-3 items-center"
+            aria-label="Zapoznaj się z ofertą"
           >
             <span>Zapoznaj się z naszą ofertą</span>
             <ArrowIcon />

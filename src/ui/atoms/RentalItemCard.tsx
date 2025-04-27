@@ -3,6 +3,7 @@ import CircleIcon from "../icons/CircleIcon";
 import TriangleIcon from "../icons/TraiangleIcon";
 import TransportIcon from "../icons/TransportIcon";
 import { RentalItem } from "@/API/models/RentalItem";
+import { links } from "@/constants";
 
 const DeviceItem: React.FC<RentalItem> = ({
   mainPhoto,
@@ -14,7 +15,7 @@ const DeviceItem: React.FC<RentalItem> = ({
   nextDayPrice,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row gap-8 py-8 md:px-8 px-4 bg-white rounded-lg border-2 border-[#f2f2f2]">
+    <div className="flex flex-col md:flex-row gap-8 py-8 md:px-8 px-4 bg-white rounded-lg border-2 border-[#f2f2f2] font-medium">
       {/* Device image */}
       <div className="w-full md:w-64 flex-shrink-0 mb-4 md:mb-0 ">
         <img src={mainPhoto} alt={name} className="max-w-full h-auto" />
@@ -24,7 +25,7 @@ const DeviceItem: React.FC<RentalItem> = ({
       <div className="flex-grow flex flex-col justify-between md:ml-6">
         <div>
           {/* Device title */}
-          <h2 className="text-xl font-bold mb-2">{name}</h2>
+          <h2 className="text-2xl font-bold mb-2">{name}</h2>
 
           {/* Device description */}
           <p className="mb-4 text-sm font-medium">{description}</p>
@@ -75,9 +76,13 @@ const DeviceItem: React.FC<RentalItem> = ({
           {/* Contact button */}
           <div className="md:flex hidden items-end ">
             <div className="flex justify-end">
-              <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full text-nowrap">
+              <a
+                href={links.contactPage}
+                className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full text-nowrap"
+                aria-label="Przejdź do strony kontaktowej"
+              >
                 Skontaktuj się
-              </button>
+              </a>
             </div>
           </div>
         </div>

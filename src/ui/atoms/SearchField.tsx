@@ -1,5 +1,5 @@
 "use client"
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 
 interface SearchInputProps {
   placeholder?: string;
@@ -12,21 +12,21 @@ const SearchInput = ({
 }: SearchInputProps) => {
   const [query, setQuery] = useState<string>("");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // Effect to trigger search when query changes
+  useEffect(() => {
     if (onSearch) {
       onSearch(query);
     }
-  };
+  }, [query, onSearch]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="relative w-full mt-4 md:w-[342px] min-w-2xs">
-      <div className="relative flex items-center ">
-        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+    <div className="relative w-full mt-4 md:w-[342px] min-w-2xs">
+      <div className="relative flex items-center">
+        <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -59,13 +59,13 @@ const SearchInput = ({
         </div>
         <input
           type="search"
-          className="w-full py-3 pl-12 pr-4 bg-white rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent"
+          className="w-full py-3 pl-12 pr-4 bg-white rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-cancel-button]:relative [&::-webkit-search-cancel-button]:w-5 [&::-webkit-search-cancel-button]:h-5 [&::-webkit-search-cancel-button]:cursor-pointer [&::-webkit-search-cancel-button]:bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23000%22%3E%3Cpath%20d%3D%22M19%206.41L17.59%205%2012%2010.59%206.41%205%205%206.41%2010.59%2012%205%2017.59%206.41%2019%2012%2013.41%2017.59%2019%2019%2017.59%2013.41%2012z%22%2F%3E%3C%2Fsvg%3E')]"
           placeholder={placeholder}
           value={query}
           onChange={handleChange}
         />
       </div>
-    </form>
+    </div>
   );
 };
 

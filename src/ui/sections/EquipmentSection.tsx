@@ -2,6 +2,7 @@ import React from "react";
 import CleaningIcon from "../icons/CleaningIcon";
 import WrenchIcon from "../icons/WrenchIcon";
 import LightningIcon from "../icons/LightningIcon";
+import { links } from "@/constants";
 
 const EquipmentSection = () => {
   return (
@@ -76,12 +77,20 @@ const EquipmentSection = () => {
         </div>
         <div>
           <div className="flex space-x-4 mt-10 justify-center w-full">
-            <button className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
+            <a
+              href={links.rental}
+              className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full text-center"
+              aria-label="Przejdź do strony wynajmu"
+            >
               Wynajmij sprzęt
-            </button>
-            <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
+            </a>
+            <a
+              href={links.contactPage}
+              className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full text-center"
+              aria-label="Przejdź do strony kontaktowej"
+            >
               Skontaktuj się
-            </button>
+            </a>
           </div>
         </div>
       </div>

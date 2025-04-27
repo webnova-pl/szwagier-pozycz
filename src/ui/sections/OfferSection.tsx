@@ -1,6 +1,6 @@
-import Image from "next/image";
 import React, { JSX } from "react";
 import guyImage from "@public/guy.png";
+import { links } from "@/constants";
 
 interface Benefit {
   title: string;
@@ -12,55 +12,72 @@ interface OfferSectionProps {
   withRentButton?: boolean;
 }
 
-const OfferSection: React.FC<OfferSectionProps> = ({ withRentButton = true }) => {
+const OfferSection: React.FC<OfferSectionProps> = ({
+  withRentButton = true,
+}) => {
   const benefits: Benefit[] = [
     {
       title: "Szwagier",
       highlight: "dba",
-      description: 'Sprzęt jest zawsze sprawny i czysty, bo szwagier wie, że "jak dbasz, tak masz".'
+      description:
+        'Sprzęt jest zawsze sprawny i czysty, bo szwagier wie, że "jak dbasz, tak masz".',
     },
     {
       title: "Szwagier",
       highlight: "zna się",
-      description: "Dlatego kupuje tylko sprawdzony, znany i niezawodny sprzęt."
+      description:
+        "Dlatego kupuje tylko sprawdzony, znany i niezawodny sprzęt.",
     },
     {
       title: "Do szwagra",
       highlight: "jest blisko",
-      description: "Wygodna lokalizacja, łatwy dojazd i zero problemów z parkowaniem - szwagier zadbał o Twój komfort."
+      description:
+        "Wygodna lokalizacja, łatwy dojazd i zero problemów z parkowaniem - szwagier zadbał o Twój komfort.",
     },
     {
       title: "U szwagra",
       highlight: "jest taniej",
-      description: "Ceny są tak niskie, że aż wstyd nie pożyczyć. Po co kupować skoro szwagier ma w garażu?"
+      description:
+        "Ceny są tak niskie, że aż wstyd nie pożyczyć. Po co kupować skoro szwagier ma w garażu?",
     },
     {
       title: "Szwagier",
       highlight: "doradzi",
-      description: "Nie wiesz, jaki odkurzacz będzie najlepszy do twojego dywanu, albo jak zamontować ten obraz który leży pod ścianą już trzeci miesiąc, bo ściana jest z żelbetu i spaliłeś swoją wiertarkę? Szwagier pomoże!"
+      description:
+        "Nie wiesz, jaki odkurzacz będzie najlepszy do twojego dywanu, albo jak zamontować ten obraz który leży pod ścianą już trzeci miesiąc, bo ściana jest z żelbetu i spaliłeś swoją wiertarkę? Szwagier pomoże!",
     },
     {
       title: "U szwagra",
       highlight: "jest elastycznie",
-      description: "Potrzebujesz sprzęt na dzień, a może na tydzień, lub wypożyczyłeś o 15:00 ale możesz zwrócić dopiero o 17:00, bo szef znowu czegoś chciał? Ze szwagrem dogadasz się bez problemu."
+      description:
+        "Potrzebujesz sprzęt na dzień, a może na tydzień, lub wypożyczyłeś o 15:00 ale możesz zwrócić dopiero o 17:00, bo szef znowu czegoś chciał? Ze szwagrem dogadasz się bez problemu.",
     },
     {
       title: "U szwagra",
       highlight: "jest wesoło",
-      description: "Szwagier to dusza człowiek, zawsze znajdzie czas na pogawędkę i dowcip."
-    }
+      description:
+        "Szwagier to dusza człowiek, zawsze znajdzie czas na pogawędkę i dowcip.",
+    },
   ];
 
   const renderButtons = (): JSX.Element => (
     <div className="flex space-x-4 max-md:hidden justify-center max-md:w-full">
       {withRentButton && (
-        <button className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
+        <a
+          href={links.rental}
+          className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full"
+          aria-label="Przejdź do strony wynajmu"
+        >
           Wynajmij sprzęt
-        </button>
+        </a>
       )}
-      <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
+      <a
+        href={links.contactPage}
+        className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full"
+        aria-label="Przejdź do strony kontaktowej"
+      >
         Skontaktuj się
-      </button>
+      </a>
     </div>
   );
 
@@ -99,10 +116,10 @@ const OfferSection: React.FC<OfferSectionProps> = ({ withRentButton = true }) =>
           ))}
 
           {/* Image */}
-          <Image
+          <img
             width={340}
             height={340}
-            src={guyImage}
+            src={guyImage.src}
             alt="Szwagier"
             className="absolute -bottom-[22%] md:-bottom-[25%] right-0 w-[340px]"
           />

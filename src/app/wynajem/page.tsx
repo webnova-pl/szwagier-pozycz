@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function Rent() {
   return (
-    <main className=" ">
+    <main className="max-md:mt-4">
       <RentalItemsSection />
       <IconsSection />
       <OfferSection withRentButton={false} />

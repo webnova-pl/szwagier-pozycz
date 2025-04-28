@@ -13,7 +13,7 @@ const HeroSection = () => {
           Sprzęt czyszczący, elektronarzędzia, agregaty
         </p>
         <h1
-          className="font-bold md:text-[56px] text-4xl leading-snug"
+          className="font-bold md:text-[56px] max-sm:text-3xl text-4xl leading-snug"
           data-aos="fade-right"
           data-aos-delay="200"
         >

@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <main className=" ">
-      <section className="bg-theme-gray-400 pt-12 md:pb-20">
+    <main className="max-md:mt-4">
+      <section className="bg-theme-gray-400  pt-12 md:pb-20">
         <div className="container">
           <div className="flex flex-col items-center md:flex-row justify-between md:gap-8 lg:gap-[8rem]">
             <div className="flex flex-col gap-4">
@@ -64,7 +64,7 @@ export default function Contact() {
               </div>
             </div>
             <iframe
-              className="w-full rounded-xl -mx-4"
+              className="w-full md:rounded-xl -mx-4"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1523.1556291751585!2d22.005827045855433!3d50.05572060058344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfb2321b8aa75%3A0xd56727d71d21b860!2sLubelska%2020%2C%2035-233%20Rzesz%C3%B3w!5e0!3m2!1spl!2spl!4v1745683944842!5m2!1spl!2spl"
               width="550"
               height="500"

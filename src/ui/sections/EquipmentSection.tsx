@@ -6,7 +6,7 @@ import { links } from "@/constants";
 
 const EquipmentSection = () => {
   return (
-    <section className="py-20">
+    <section className="py-20" id="oferta">
       <div className="container max-md:px-6">
         <div className="flex flex-col items-center">
           <span

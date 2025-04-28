@@ -38,7 +38,7 @@ const HeroSection = () => {
           data-aos-delay="400"
         >
           <a
-            href=""
+            href="#oferta"
             className=" text-theme-gray-300 font-bold text-base flex space-x-3 items-center"
             aria-label="Zapoznaj się z ofertą"
           >

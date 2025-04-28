@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl">
+    <html lang="pl" className="overflow-x-hidden">
       <head>
         <link
           rel="apple-touch-icon"
@@ -77,7 +77,9 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
       </head>
       <AOSInit />
-      <body className={`${montserrat.className} antialiased overflow-x-hidden`}>
+      <body
+        className={`${montserrat.className} antialiased overflow-x-hidden `}
+      >
         <Header />
         <main>{children}</main>
         <Footer />

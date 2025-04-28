@@ -77,7 +77,7 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
       </head>
       <AOSInit />
-      <body className={`${montserrat.className} antialiased`}>
+      <body className={`${montserrat.className} antialiased overflow-x-hidden`}>
         <Header />
         <main>{children}</main>
         <Footer />

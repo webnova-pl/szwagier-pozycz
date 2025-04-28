@@ -32,19 +32,18 @@ const AboutUsSection = () => {
             // className="max-w-[600px]"
             className="text-base"
           />
-          {/* <div className="flex space-x-4 mt-10 max-md:w-full"> */}
-          <div className="flex space-x-2 md:space-x-4 max-md:w-full mt-10">
+          <div className="flex space-x-2 md:space-x-4 mt-10 max-md:w-full">
             <a
               href={links.rental}
               aria-label="Przejdź do strony wynajmu"
-              className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full hover:bg-[#F1B426] transition-all"
+              className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full hover:bg-[#F1B426] transition-all text-center"
             >
               Wynajmij sprzęt
             </a>
             <a
               href={links.contactPage}
               aria-label="Przejdź do strony kontaktowej"
-              className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full hover:bg-[#363636] transition-colors"
+              className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full hover:bg-[#363636] transition-colors text-center"
             >
               Skontaktuj się
             </a>

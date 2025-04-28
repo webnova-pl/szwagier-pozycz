@@ -143,7 +143,7 @@ const OfferSection: React.FC<OfferSectionProps> = ({
             height={340}
             src={guyImage.src}
             alt="Szwagier"
-            className="absolute -bottom-[22%] md:-bottom-[40%] right-0 w-[340px]"
+            className="absolute -bottom-[27%] md:-bottom-[40%] right-0 w-[340px]"
           />
         </div>
       </div>

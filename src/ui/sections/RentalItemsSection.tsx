@@ -5,6 +5,7 @@ import SearchInput from "../atoms/SearchField";
 import { RentalItem } from "@/API/models/RentalItem";
 import { RentalItemsService } from "@/API/services/rentalItemsService";
 import Spinner from "../atoms/Spinner";
+import InfoIcon from "../icons/InfoIcon";
 
 const RentalItemsSection: React.FC = () => {
   // State for all devices and filtered devices
@@ -32,7 +33,7 @@ const RentalItemsSection: React.FC = () => {
   // Separate useEffect for data fetching
   useEffect(() => {
     fetchDevices();
-    
+
     // Cleanup function to handle component unmounting
     return () => {
       // Any cleanup if needed
@@ -40,45 +41,60 @@ const RentalItemsSection: React.FC = () => {
   }, [fetchDevices]);
 
   // Memoize the search function
-  const handleSearch = useCallback((query: string) => {
-    // If search query is empty, show all devices
-    if (!query || !query.trim()) {
-      setFilteredDevices(allDevices);
-      return;
-    }
+  const handleSearch = useCallback(
+    (query: string) => {
+      // If search query is empty, show all devices
+      if (!query || !query.trim()) {
+        setFilteredDevices(allDevices);
+        return;
+      }
 
-    // Filter devices by name or description
-    const lowerCaseQuery = query.toLowerCase();
-    const filtered = allDevices.filter(
-      (device) =>
-        device.name.toLowerCase().includes(lowerCaseQuery) ||
-        device.description.toLowerCase().includes(lowerCaseQuery)
-    );
+      // Filter devices by name or description
+      const lowerCaseQuery = query.toLowerCase();
+      const filtered = allDevices.filter(
+        (device) =>
+          device.name.toLowerCase().includes(lowerCaseQuery) ||
+          device.description.toLowerCase().includes(lowerCaseQuery)
+      );
 
-    setFilteredDevices(filtered);
-  }, [allDevices]);
+      setFilteredDevices(filtered);
+    },
+    [allDevices]
+  );
 
   // Debug logging - remove in production
-  console.log('Render state:', { 
-    isLoading, 
-    devicesCount: allDevices.length, 
-    filteredCount: filteredDevices.length 
-  });
+  // console.log("Render state:", {
+  //   isLoading,
+  //   devicesCount: allDevices.length,
+  //   filteredCount: filteredDevices.length,
+  // });
 
   return (
     <section className="bg-theme-gray-400 py-12 pb-20">
       <div className="container max-md:px-4">
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div className="flex flex-col">
-            <h2 className="font-bold text-[36px] md:text-[56px] leading-[128%] mb-4">
+            <h2
+              className="font-bold text-[36px] md:text-[56px] leading-[128%] mb-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               Wynajmij nasz sprzęt
             </h2>
-            <p className="text-[#3D3D3D] font-medium text-base md:text-[20px] mb-8">
+            <p
+              className="text-[#3D3D3D] font-medium text-base md:text-[20px] mb-8"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               Lorem ipsum dolor sit amet consectetur. Ultrices a in non ut
               ultrices aliquet sagittis pretium. Lectus laoreet consectetur.
             </p>
           </div>
-          <div className="mb-8 w-full md:flex md:justify-end">
+          <div
+            className="mb-8 w-full md:flex md:justify-end"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
             <SearchInput onSearch={handleSearch} />
           </div>
         </div>
@@ -106,6 +122,15 @@ const RentalItemsSection: React.FC = () => {
           </p>
         </div>
       )}
+      <div className="container flex justify-center mt-10 md:mt-20 font-medium text-xl items-center space-x-4 max-md:px-4 max-md:text-sm ">
+        <span>
+          <InfoIcon />
+        </span>
+        <p className="">
+          Przy umowie wynajmu pobieramy kaucję w&nbsp;wysokości 100 zł pobierane
+          na kartę.
+        </p>
+      </div>
     </section>
   );
 };

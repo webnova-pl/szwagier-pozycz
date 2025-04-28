@@ -61,11 +61,15 @@ const OfferSection: React.FC<OfferSectionProps> = ({
   ];
 
   const renderButtons = (): JSX.Element => (
-    <div className="flex space-x-4 max-md:hidden justify-center max-md:w-full">
+    <div
+      className="flex space-x-2 md:space-x-4 max-md:hidden justify-center max-md:w-full"
+      data-aos="fade-left"
+      data-aos-delay="200"
+    >
       {withRentButton && (
         <a
           href={links.rental}
-          className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full"
+          className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full hover:bg-[#F1B426] transition-all"
           aria-label="Przejdź do strony wynajmu"
         >
           Wynajmij sprzęt
@@ -73,7 +77,7 @@ const OfferSection: React.FC<OfferSectionProps> = ({
       )}
       <a
         href={links.contactPage}
-        className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full"
+        className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full hover:bg-[#363636] transition-colors hover:bg-[#363636] transition-colors"
         aria-label="Przejdź do strony kontaktowej"
       >
         Skontaktuj się
@@ -81,8 +85,14 @@ const OfferSection: React.FC<OfferSectionProps> = ({
     </div>
   );
 
-  const BenefitCard = ({ benefit }: { benefit: Benefit }): JSX.Element => (
-    <div>
+  const BenefitCard = ({
+    benefit,
+    idx,
+  }: {
+    benefit: Benefit;
+    idx: number;
+  }): JSX.Element => (
+    <div data-aos="fade-up" data-aos-delay={50 * idx}>
       <h4 className="font-bold text-xl max-md:text-2xl leading-tight">
         {benefit.title} <br />
         <span className="bg-primary-100 block mt-1 w-fit px-3 rounded-full py-1">
@@ -96,23 +106,35 @@ const OfferSection: React.FC<OfferSectionProps> = ({
   );
 
   return (
-    <section className="bg-theme-gray-400 pt-20 md:pb-10 pb-40">
+    <section className="bg-theme-gray-400 pt-20 md:pb-20 pb-40">
       <div className="container max-md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-col">
-            <span className="text-theme-gray-100 font-medium uppercase text-[20px]">
+            <span
+              className="text-theme-gray-100 font-medium uppercase text-[20px]"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
               O NAS
             </span>
-            <h2 className="font-bold text-[40px] leading-[128%] mb-4 mt-6 max-w-[560px]">
+            <h2
+              className="font-bold text-[40px] leading-[128%] mb-4 mt-6 max-w-[560px]"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
               Dlaczego warto pożyczać u szwagra?
             </h2>
           </div>
           {renderButtons()}
         </div>
 
-        <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-8 space-y-20 relative">
+        <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 space-x-8 space-y-10 relative">
           {benefits.map((benefit, index) => (
-            <BenefitCard key={`benefit-${index}`} benefit={benefit} />
+            <BenefitCard
+              key={`benefit-${index}`}
+              benefit={benefit}
+              idx={index}
+            />
           ))}
 
           {/* Image */}
@@ -121,7 +143,7 @@ const OfferSection: React.FC<OfferSectionProps> = ({
             height={340}
             src={guyImage.src}
             alt="Szwagier"
-            className="absolute -bottom-[22%] md:-bottom-[25%] right-0 w-[340px]"
+            className="absolute -bottom-[22%] md:-bottom-[40%] right-0 w-[340px]"
           />
         </div>
       </div>

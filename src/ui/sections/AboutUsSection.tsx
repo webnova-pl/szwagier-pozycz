@@ -1,10 +1,11 @@
+import { links } from "@/constants";
 import React from "react";
 
 const AboutUsSection = () => {
   return (
     <section className="bg-theme-gray-400">
       <div className="container flex flex-col md:flex-row max-md:px-6 py-28">
-        <div className="flex-1">
+        <div className="flex-1" data-aos="fade-right" data-aos-delay="200">
           <img
             src="./about-us-img.png"
             alt=""
@@ -12,7 +13,11 @@ const AboutUsSection = () => {
           />
           <img src="./about-us-mobile.png" alt="" className="block md:hidden" />
         </div>
-        <div className="flex-1 flex flex-col max-md:mt-12 justify-center">
+        <div
+          className="flex-1 flex flex-col max-md:mt-12 justify-center"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
           <span className="text-theme-gray-100 font-medium uppercase text-[20px]  ">
             O NAS
           </span>
@@ -27,13 +32,22 @@ const AboutUsSection = () => {
             // className="max-w-[600px]"
             className="text-base"
           />
-          <div className="flex space-x-4 mt-10 max-md:w-full">
-            <button className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
+          {/* <div className="flex space-x-4 mt-10 max-md:w-full"> */}
+          <div className="flex space-x-2 md:space-x-4 max-md:w-full mt-10">
+            <a
+              href={links.rental}
+              aria-label="Przejdź do strony wynajmu"
+              className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full hover:bg-[#F1B426] transition-all"
+            >
               Wynajmij sprzęt
-            </button>
-            <button className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full">
+            </a>
+            <a
+              href={links.contactPage}
+              aria-label="Przejdź do strony kontaktowej"
+              className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full hover:bg-[#363636] transition-colors"
+            >
               Skontaktuj się
-            </button>
+            </a>
           </div>
         </div>
       </div>

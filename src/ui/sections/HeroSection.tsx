@@ -5,21 +5,38 @@ const HeroSection = () => {
   return (
     <section className="container flex flex-col-reverse md:flex-row pb-20">
       <div className="flex-1 flex justify-end max-md:-mt-32 flex-col z-20 max-md:px-6">
-        <p className="text-theme-gray-100 font-medium uppercase text-base md:text-[20px] mb-8">
+        <p
+          className="text-theme-gray-100 font-medium uppercase text-base md:text-[20px] mb-8"
+          data-aos="fade-right"
+          data-aos-delay="100"
+        >
           Sprzęt czyszczący, elektronarzędzia, agregaty
         </p>
-        <h1 className="font-bold md:text-[56px] text-4xl leading-normal">
+        <h1
+          className="font-bold md:text-[56px] text-4xl leading-snug"
+          data-aos="fade-right"
+          data-aos-delay="200"
+        >
           <span className="bg-primary-100 rounded-full px-4 py-2">
             Wypożyczalnia
           </span>
           <br /> sprzętu i narzędzi <br /> w Rzeszowie
         </h1>
-        <h2 className="mt-6 text-base md:text-[20px] text-theme-gray-200">
+        <h2
+          className="mt-6 text-base md:text-[20px] text-theme-gray-200"
+          data-aos="fade-right"
+          data-aos-delay="300"
+        >
           U Szwagra masz wszystko{" "}
-          <span className="font-bold">do domu i ogrodu</span>. <br /> Nie każdy
-          ma szwagra, więc my nim jesteśmy!
+          <span className="font-bold">do domu i ogrodu</span>.{" "}
+          <br className="md:block hidden" /> Nie każdy ma szwagra, więc my nim
+          jesteśmy!
         </h2>
-        <div className="mt-6 max-md:hidden py-4 px-6 rounded-full border border-[#E2E2E2] inline-block w-fit">
+        <div
+          className="mt-6 max-md:hidden py-4 px-6 rounded-full border border-[#E2E2E2] inline-block w-fit"
+          data-aos="fade-right"
+          data-aos-delay="400"
+        >
           <a
             href=""
             className=" text-theme-gray-300 font-bold text-base flex space-x-3 items-center"
@@ -30,7 +47,10 @@ const HeroSection = () => {
           </a>
         </div>
       </div>
-      <div className="flex justify-end relative max-md:mt-10">
+      <div
+        className="flex justify-end relative max-md:mt-10"
+        data-aos="fade-up"
+      >
         <img src="./hero-img.png" alt="Hero img" className="hidden md:block" />
         <img
           src="./hero-mobile.png"

@@ -14,17 +14,17 @@ const Header = () => {
           />
         </Link>
       </div>
-      <div className="flex space-x-4 max-md:w-full">
+      <div className="flex space-x-2 md:space-x-4 max-md:w-full">
         <a
           href={links.rental}
-          className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center"
+          className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center hover:bg-[#F1B426] transition-all"
           aria-label="Przejdź do strony wynajmu"
         >
           Wynajmij sprzęt
         </a>
         <a
           href={links.contactPage}
-          className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center"
+          className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center hover:bg-[#363636] transition-colors"
           aria-label="Przejdź do strony kontaktowej"
         >
           Skontaktuj się

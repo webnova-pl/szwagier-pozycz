@@ -22,15 +22,27 @@ export default function Contact() {
         <div className="container">
           <div className="flex flex-col items-center md:flex-row justify-between md:gap-8 lg:gap-[8rem]">
             <div className="flex flex-col gap-4">
-              <h1 className="font-bold text-4xl md:text-[56px] max-md:text-center max-md:mt-6 leading-[128%] mb-4">
+              <h1
+                className="font-bold text-4xl md:text-[56px] max-md:text-center max-md:mt-6 leading-[128%] mb-4"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 Skontaktuj się <br /> z szwagrem
               </h1>
-              <p className="text-[#3D3D3D] font-medium text-[20px] mb-8 max-md:hidden">
+              <p
+                className="text-[#3D3D3D] font-medium text-[20px] mb-8 max-md:hidden"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 Potrzebujesz wypożyczyć sprzęt? Skontaktuj się z nami
                 telefonicznie, mailowo lub odwiedź naszą lokalizację w
                 Rzeszowie.
               </p>
-              <div className="mb-16 text-[#3D3D3D]">
+              <div
+                className="mb-16 text-[#3D3D3D]"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <div className="flex gap-6 md:gap-8 max-md:justify-center flex-wrap">
                   <div className="flex gap-4 font-bold text-nowrap">
                     <PhoneIcon />
@@ -40,10 +52,7 @@ export default function Contact() {
                   </div>
                   <div className="flex gap-4 font-bold">
                     <EnvelopeIcon />
-                    <a
-                      href={`mailto:${contactMail}`}
-                      aria-label="Email"
-                    >
+                    <a href={`mailto:${contactMail}`} aria-label="Email">
                       {contactMail}
                     </a>
                   </div>
@@ -61,6 +70,8 @@ export default function Contact() {
               height="500"
               loading="lazy"
               title="Lokalizacja wypożyczalni Szwagier pozycz"
+              data-aos="fade-left"
+              data-aos-delay="200"
             ></iframe>
           </div>
         </div>

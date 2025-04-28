@@ -78,7 +78,7 @@ const DeviceItem: React.FC<RentalItem> = ({
             <div className="flex justify-end">
               <a
                 href={links.contactPage}
-                className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full text-nowrap"
+                className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer max-md:w-full text-nowrap hover:bg-[#363636] transition-colors"
                 aria-label="Przejdź do strony kontaktowej"
               >
                 Skontaktuj się

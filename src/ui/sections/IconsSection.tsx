@@ -1,29 +1,20 @@
-import React from "react";
-import HandCoinsIcon from "../icons/HandCoinsIcon";
 import CarIcon from "../icons/CarIcon";
-import LadderIcon from "../icons/LadderIcon";
 import FileIcon from "../icons/FileIcon";
+import LadderIcon from "../icons/LadderIcon";
+import SealCheckIcon from "../icons/SealCheckIcon";
 
 const IconsSection = () => {
   return (
     <section>
       <div className="container max-md:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-4 my-20 md:space-x-8 max-md:space-y-10">
-          {/* Bez kaucji */}
-
-          <div className="flex flex-col items-center">
-            <div>
-              <HandCoinsIcon />
-            </div>
-            <h4 className="font-bold text-2xl my-4">Bez kaucji</h4>
-            <p className="text-base text-center font-medium">
-              Przy umowie wynajmu <br /> nie pobieramy kaucji.
-            </p>
-          </div>
-
+        <div className="grid grid-cols-1 lg:grid-cols-4 my-20 md:mb-28 md:space-x-8 max-md:space-y-10">
           {/* Transport */}
 
-          <div className="flex flex-col items-center">
+          <div
+            className="flex flex-col items-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div>
               <CarIcon />
             </div>
@@ -35,7 +26,11 @@ const IconsSection = () => {
 
           {/* Instruktaz */}
 
-          <div className="flex flex-col items-center">
+          <div
+            className="flex flex-col items-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div>
               <LadderIcon />
             </div>
@@ -45,9 +40,29 @@ const IconsSection = () => {
             </p>
           </div>
 
+          {/* Sprawdzony sprzęt */}
+
+          <div
+            className="flex flex-col items-center"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div>
+              <SealCheckIcon />
+            </div>
+            <h4 className="font-bold text-2xl my-4">Sprawdzony sprzęt</h4>
+            <p className="text-base text-center font-medium">
+              Regularnie sprawdzamy <br /> sprawność naszego sprzętu
+            </p>
+          </div>
+
           {/* Faktura VAT */}
 
-          <div className="flex flex-col items-center">
+          <div
+            className="flex flex-col items-center"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <div>
               <FileIcon />
             </div>

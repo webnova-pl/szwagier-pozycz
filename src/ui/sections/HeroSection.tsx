@@ -51,14 +51,14 @@ const HeroSection = () => {
         className="flex justify-end relative max-md:mt-10"
         data-aos="fade-up"
       >
-        <img src="./hero-img.png" alt="Hero img" className="hidden md:block" />
+        <img src="/images/hero-img.webp" alt="Hero img" className="hidden md:block" />
         <img
-          src="./hero-mobile.png"
+          src="/images/hero-mobile.webp"
           alt="Hero img"
           className="block md:hidden"
         />
         <div className="absolute -left-32 -bottom-10 hidden md:block">
-          <img src="./guy.png" alt="" className="w-[362px]" />
+          <img src="/images/guy.webp" alt="" className="w-[362px]" />
         </div>
       </div>
     </section>

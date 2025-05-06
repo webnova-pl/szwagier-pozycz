@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   keywords:
     "wypożyczenie sprzętu, wynajem narzędzi, wypożyczalnia, sprzęt budowlany, elektronarzędzia",
   alternates: {
-    canonical: "https://szwagierpozycz.pl/kontakt",
+    canonical: "https://szwagierpozycz.pl/wynajem",
   },
 };
 

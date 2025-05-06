@@ -40,7 +40,7 @@ const EquipmentSection = () => {
             data-aos-delay="100"
           >
             <div className="">
-              <img src="./sprzet-czyszczacy.png" alt="" className="w-full" />
+              <img src="/images/sprzet-czyszczacy.webp" alt="" className="w-full" />
             </div>
             <div className="bg-theme-gray-400 flex-1 text-dark-100 px-8 pb-10 pt-14 relative">
               <div className="bg-primary-100 aspect-square w-[74px] flex justify-center items-center rounded-lg absolute top-0 -translate-y-1/2">
@@ -63,7 +63,7 @@ const EquipmentSection = () => {
             data-aos-delay="200"
           >
             <div className="">
-              <img src="./elektronarzedzia-img.png" alt="" className="w-full" />
+              <img src="/images/elektronarzedzia-img.webp" alt="" className="w-full" />
             </div>
             <div className="bg-theme-gray-400 flex-1 text-dark-100 px-8 pb-10 pt-14 relative">
               <div className="bg-primary-100 aspect-square w-[74px] flex justify-center items-center rounded-lg absolute top-0 -translate-y-1/2">
@@ -85,7 +85,7 @@ const EquipmentSection = () => {
             data-aos-delay="300"
           >
             <div className="">
-              <img src="./agregaty-img.png" alt="" className="w-full" />
+              <img src="/images/agregaty-img.webp" alt="" className="w-full" />
             </div>
             <div className="bg-theme-gray-400 flex-1 text-dark-100 px-8 pb-10 pt-14 relative">
               <div className="bg-primary-100 aspect-square w-[74px] flex justify-center items-center rounded-lg absolute top-0 -translate-y-1/2">

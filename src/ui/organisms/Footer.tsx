@@ -48,11 +48,11 @@ const Footer: React.FC<FooterProps> = ({ withoutRentButton = false }) => {
           </div>
           {/* <div className="flex-1 flex justify-end"> */}
           <div className="flex md:hidden">
-            <img src="./footer-img-mobile.png" alt="" className="w-full" />
+            <img src="/images/footer-img-mobile.webp" alt="" className="w-full" />
           </div>
 
           <div className="absolute hidden md:block right-0 top-0 bottom-0">
-            <img src="./footer-img.png" alt="" className="h-full" />
+            <img src="/images/footer-img.webp" alt="" className="h-full" />
           </div>
         </div>
       </div>

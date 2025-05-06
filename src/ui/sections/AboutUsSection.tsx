@@ -7,11 +7,11 @@ const AboutUsSection = () => {
       <div className="container flex flex-col md:flex-row max-md:px-6 py-28">
         <div className="flex-1" data-aos="fade-right" data-aos-delay="200">
           <img
-            src="./about-us-img.png"
+            src="/images/about-us-img.webp"
             alt=""
             className="rounded-[10px] hidden md:block"
           />
-          <img src="./about-us-mobile.png" alt="" className="block md:hidden" />
+          <img src="/images/about-us-mobile.webp" alt="" className="block md:hidden" />
         </div>
         <div
           className="flex-1 flex flex-col max-md:mt-12 justify-center"

@@ -9,7 +9,7 @@ const Header = () => {
         <Link href={"/"}>
           <img
             className="md:h-[115px] h-[164px] w-auto"
-            src="./logo.png"
+            src="/images/logo.webp"
             alt="logo"
           />
         </Link>

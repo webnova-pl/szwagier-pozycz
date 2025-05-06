@@ -65,7 +65,7 @@ export default function Contact() {
             </div>
             <iframe
               className="w-full md:rounded-xl -mx-4"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1523.1556291751585!2d22.005827045855433!3d50.05572060058344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfb2321b8aa75%3A0xd56727d71d21b860!2sLubelska%2020%2C%2035-233%20Rzesz%C3%B3w!5e0!3m2!1spl!2spl!4v1745683944842!5m2!1spl!2spl"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7247.080859181045!2d21.96120223712538!3d50.04452241388498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfb73c13e3bc1%3A0x1fc1681c85f757dd!2sWiktora%20Zbyszewskiego%2013%2C%2035-119%20Rzesz%C3%B3w!5e0!3m2!1spl!2spl!4v1746475651570!5m2!1spl!2spl"
               width="550"
               height="500"
               loading="lazy"

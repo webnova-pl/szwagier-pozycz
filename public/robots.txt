@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /api/wp-admin/
+Disallow: /api/wp-includes/
+Disallow: /api/?rest_route=
+Disallow: /search
+Disallow: /?s=
+
+Allow: /api/wp-json/
+Allow: /*.js$
+Allow: /*.css$
+Allow: /images/
+Allow: /assets/
+
+Sitemap: https://www.szwagierpozycz.com/sitemap.xml

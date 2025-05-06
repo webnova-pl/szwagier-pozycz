@@ -5,6 +5,6 @@ export const links = {
   privacyPolicy: "/polityka-prywatnosci",
 };
 
-export const contactMail = "kontakt@szwagierpozycz.pl";
+export const contactMail = "szwagierpozycz@gmail.com";
 export const phoneNumber = "+48 726 076 079";
-export const address = "Lubelska 20/1, 23-213 Rzeszów";
+export const address = "Zbyszewskiego 13, 35-119 Rzeszów";

@@ -5,7 +5,7 @@ import SearchInput from "../atoms/SearchField";
 import { RentalItem } from "@/API/models/RentalItem";
 import { RentalItemsService } from "@/API/services/rentalItemsService";
 import Spinner from "../atoms/Spinner";
-import InfoIcon from "../icons/InfoIcon";
+// import InfoIcon from "../icons/InfoIcon";
 
 const RentalItemsSection: React.FC = () => {
   // State for all devices and filtered devices
@@ -75,7 +75,7 @@ const RentalItemsSection: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div className="flex flex-col">
             <h2
-              className="font-bold text-[36px] md:text-[56px] leading-[128%] mb-4"
+              className="font-bold text-[36px] md:text-[56px] leading-[128%] mb-4 lg:text-nowrap"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -86,8 +86,7 @@ const RentalItemsSection: React.FC = () => {
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              Lorem ipsum dolor sit amet consectetur. Ultrices a in non ut
-              ultrices aliquet sagittis pretium. Lectus laoreet consectetur.
+              Tu znajdziesz wszystko, co potrzebne do działania!
             </p>
           </div>
           <div
@@ -122,7 +121,7 @@ const RentalItemsSection: React.FC = () => {
           </p>
         </div>
       )}
-      <div className="container flex justify-center mt-10 md:mt-20 font-medium text-xl items-center space-x-4 max-md:px-4 max-md:text-sm ">
+      {/* <div className="container flex justify-center mt-10 md:mt-20 font-medium text-xl items-center space-x-4 max-md:px-4 max-md:text-sm ">
         <span>
           <InfoIcon />
         </span>
@@ -130,7 +129,7 @@ const RentalItemsSection: React.FC = () => {
           Przy umowie wynajmu pobieramy kaucję w&nbsp;wysokości 100 zł pobierane
           na kartę.
         </p>
-      </div>
+      </div> */}
     </section>
   );
 };

@@ -1,5 +1,5 @@
 import React, { JSX } from "react";
-import guyImage from "@public/guy.png";
+import guyImage from "@public/images/guy.webp";
 import { links } from "@/constants";
 
 interface Benefit {
@@ -93,12 +93,12 @@ const OfferSection: React.FC<OfferSectionProps> = ({
     idx: number;
   }): JSX.Element => (
     <div data-aos="fade-up" data-aos-delay={50 * idx}>
-      <h4 className="font-bold text-xl max-md:text-2xl leading-tight">
+      <h3 className="font-bold text-xl max-md:text-2xl leading-tight">
         {benefit.title} <br />
         <span className="bg-primary-100 block mt-1 w-fit px-3 rounded-full py-1">
           {benefit.highlight}
         </span>
-      </h4>
+      </h3>
       <p className="font-medium text-base leading-normal mt-4">
         {benefit.description}
       </p>

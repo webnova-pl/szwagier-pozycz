@@ -6,7 +6,7 @@ import { RentalItemsResponse } from "../models/RentalItemsResponse";
 // API Response Interface
 
 // Configuration
-const API_BASE_URL = "https://dzditmjtdq.cfolks.pl/wp-json/rental-api/v1";
+const API_BASE_URL = "https://szwagierpozycz.pl/api/wp-json/rental-api/v1";
 
 // Rental Items Service
 export class RentalItemsService {

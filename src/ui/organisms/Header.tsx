@@ -4,7 +4,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="container max-md:px-6 flex-col md:flex-row flex justify-between items-center">
+    <header className="container max-md:px-4 flex-col md:flex-row flex justify-between items-center">
       <div>
         <Link href={"/"}>
           <img
@@ -14,17 +14,24 @@ const Header = () => {
           />
         </Link>
       </div>
-      <div className="flex space-x-2 md:space-x-4 max-md:w-full">
+      <div className="flex md:space-x-4 max-md:w-full">
         <a
           href={links.rental}
-          className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center hover:bg-[#F1B426] transition-all"
+          className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center hover:bg-[#F1B426] transition-all max-md:mr-2"
           aria-label="Przejdź do strony wynajmu"
         >
           Wynajmij sprzęt
         </a>
         <a
+          href={links.shop}
+          className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center hover:bg-[#F1B426] transition-colors"
+          aria-label="Zakup agregat"
+        >
+          Zakup agregat
+        </a>
+        <a
           href={links.contactPage}
-          className="bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center hover:bg-[#363636] transition-colors"
+          className="hidden md:block bg-dark-100 text-white font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center hover:bg-[#363636] transition-colors"
           aria-label="Przejdź do strony kontaktowej"
         >
           Skontaktuj się

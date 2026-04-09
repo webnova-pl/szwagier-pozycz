@@ -2,6 +2,7 @@ export const links = {
   homePage: "/",
   contactPage: "/kontakt",
   rental: "/wynajem",
+  shop: "/sklep",
   privacyPolicy: "/polityka-prywatnosci",
 };
 

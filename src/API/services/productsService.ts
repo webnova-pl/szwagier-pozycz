@@ -1,8 +1,8 @@
+import { wordpressSiteOrigin } from "@/constants";
 import { Product } from "../models/Product";
 import { ProductsResponse } from "../models/ProductsResponse";
 
-const API_BASE_URL =
-  "https://www.szwagierpozycz.pl/api/wp-json/products-api/v1";
+const API_BASE_URL = `${wordpressSiteOrigin}/api/wp-json/products-api/v1`;
 
 export class ProductsService {
   static async getAllProducts(

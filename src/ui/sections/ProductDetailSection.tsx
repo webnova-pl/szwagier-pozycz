@@ -3,62 +3,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { Product } from "@/API/models/Product";
 import { links } from "@/constants";
 import ProductInquiryModal from "@/ui/organisms/ProductInquiryModal";
+import { downloadProductPdf } from "@/utils/productPdf";
+import { parseInlineTechnicalSpec } from "@/utils/technicalSpec";
 
 interface ProductDetailSectionProps {
   product: Product;
 }
-
-interface TechnicalSpecRow {
-  key: string;
-  value: string;
-}
-
-const parseInlineTechnicalSpec = (
-  technicalSpec: string,
-): TechnicalSpecRow[] | null => {
-  // Accept inputs like:
-  // "- Key | Value, Key 2 | Value 2 -"
-  // "Specyfikacja - Key | Value, Key 2 | Value 2 -"
-  // and basic HTML wrappers from CMS.
-  const plainText = technicalSpec
-    .replace(/<[^>]*>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-
-  if (!plainText.includes("|")) {
-    return null;
-  }
-
-  let content = plainText.replace(/^specyfikacja\s*:?\s*/i, "").trim();
-  const firstDash = content.indexOf("-");
-  const lastDash = content.lastIndexOf("-");
-  if (firstDash !== -1 && lastDash > firstDash) {
-    content = content.slice(firstDash + 1, lastDash).trim();
-  }
-
-  const rows = content
-    .split(/\s*,\s*/)
-    .map((row) => row.trim())
-    .filter(Boolean)
-    .map((row) => {
-      const separatorIndex = row.indexOf("|");
-      if (separatorIndex === -1) {
-        return null;
-      }
-
-      const key = row.slice(0, separatorIndex).trim();
-      const value = row.slice(separatorIndex + 1).trim();
-
-      if (!key || !value) {
-        return null;
-      }
-
-      return { key, value };
-    })
-    .filter((row): row is TechnicalSpecRow => row !== null);
-
-  return rows.length > 0 ? rows : null;
-};
 
 const ProductDetailSection: React.FC<ProductDetailSectionProps> = ({
   product,
@@ -81,6 +31,7 @@ const ProductDetailSection: React.FC<ProductDetailSectionProps> = ({
   const [descriptionExpanded, setDescriptionExpanded] = useState(false);
   const [hasExpandableDescription, setHasExpandableDescription] =
     useState(false);
+  const [pdfLoading, setPdfLoading] = useState(false);
   const descriptionRef = useRef<HTMLDivElement>(null);
   const galleryTouchStartX = useRef(0);
   const galleryTouchStartY = useRef(0);
@@ -365,7 +316,7 @@ const ProductDetailSection: React.FC<ProductDetailSectionProps> = ({
 
             {/* Action buttons */}
             <div className="flex flex-col md:flex-row gap-2">
-              <a
+              {/* <a
                 href="#montaz"
                 className="flex flex-1 items-center gap-3 rounded-xl px-4 py-3.5 text-sm font-medium bg-white transition-colors"
                 aria-label="Sprawdź ofertę montażu"
@@ -415,51 +366,91 @@ const ProductDetailSection: React.FC<ProductDetailSectionProps> = ({
                 >
                   <path d="M9 18l6-6-6-6" />
                 </svg>
-              </a>
-              <a
-                href={links.contactPage}
-                className="flex flex-1 items-center gap-3 bg-white rounded-xl px-4 py-3.5 text-sm font-medium"
-                aria-label="Zamów telefonicznie"
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              </a> */}
+              <div className="flex flex-1 flex-col sm:flex-row gap-2 min-w-0">
+                <a
+                  href={links.contactPage}
+                  className="flex flex-1 items-center gap-3 bg-white rounded-xl px-4 py-3.5 text-sm font-medium min-w-0"
+                  aria-label="Zamów telefonicznie"
                 >
-                  <g clipPath="url(#clip0_2018_3546)">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clipPath="url(#clip0_2018_3546)">
+                      <path
+                        d="M10.2744 9.08374C10.3436 9.03766 10.4233 9.00959 10.5061 9.00206C10.5889 8.99453 10.6723 9.00778 10.7488 9.04061L13.6963 10.3612C13.7956 10.4037 13.8785 10.4772 13.9326 10.5707C13.9867 10.6642 14.009 10.7727 13.9963 10.88C13.8991 11.6056 13.5418 12.2713 12.9907 12.7533C12.4395 13.2352 11.7321 13.5005 11 13.5C8.74566 13.5 6.58365 12.6045 4.98959 11.0104C3.39553 9.41633 2.5 7.25433 2.5 4.99999C2.49944 4.26786 2.7648 3.56045 3.24673 3.00932C3.72865 2.45818 4.39435 2.10084 5.12 2.00374C5.22727 1.99099 5.33578 2.01333 5.4293 2.06741C5.52281 2.12149 5.5963 2.2044 5.63875 2.30374L6.95938 5.25374C6.99182 5.3295 7.00504 5.41212 6.99784 5.49423C6.99064 5.57634 6.96326 5.65539 6.91813 5.72436L5.5825 7.31249C5.53512 7.38398 5.50711 7.46654 5.50119 7.55209C5.49528 7.63765 5.51166 7.72328 5.54875 7.80061C6.06563 8.85874 7.15938 9.93936 8.22063 10.4512C8.29836 10.4882 8.38439 10.5042 8.47021 10.4977C8.55602 10.4912 8.63867 10.4625 8.71 10.4144L10.2744 9.08374Z"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2018_3546">
+                        <rect width="16" height="16" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+
+                  <span className="flex-grow truncate">
+                    Zamów telefonicznie
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#000000"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="flex-shrink-0"
+                  >
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </a>
+                <button
+                  type="button"
+                  disabled={pdfLoading}
+                  onClick={async () => {
+                    setPdfLoading(true);
+                    try {
+                      await downloadProductPdf(product);
+                    } catch (e) {
+                      console.error(e);
+                    } finally {
+                      setPdfLoading(false);
+                    }
+                  }}
+                  className="flex flex-1 items-center justify-center gap-3 bg-white rounded-xl px-4 py-3.5 text-sm font-medium cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed hover:brightness-[0.98] transition-all min-w-0 border border-transparent"
+                  aria-label="Pobierz kartę produktu w formacie PDF"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden
+                  >
                     <path
-                      d="M10.2744 9.08374C10.3436 9.03766 10.4233 9.00959 10.5061 9.00206C10.5889 8.99453 10.6723 9.00778 10.7488 9.04061L13.6963 10.3612C13.7956 10.4037 13.8785 10.4772 13.9326 10.5707C13.9867 10.6642 14.009 10.7727 13.9963 10.88C13.8991 11.6056 13.5418 12.2713 12.9907 12.7533C12.4395 13.2352 11.7321 13.5005 11 13.5C8.74566 13.5 6.58365 12.6045 4.98959 11.0104C3.39553 9.41633 2.5 7.25433 2.5 4.99999C2.49944 4.26786 2.7648 3.56045 3.24673 3.00932C3.72865 2.45818 4.39435 2.10084 5.12 2.00374C5.22727 1.99099 5.33578 2.01333 5.4293 2.06741C5.52281 2.12149 5.5963 2.2044 5.63875 2.30374L6.95938 5.25374C6.99182 5.3295 7.00504 5.41212 6.99784 5.49423C6.99064 5.57634 6.96326 5.65539 6.91813 5.72436L5.5825 7.31249C5.53512 7.38398 5.50711 7.46654 5.50119 7.55209C5.49528 7.63765 5.51166 7.72328 5.54875 7.80061C6.06563 8.85874 7.15938 9.93936 8.22063 10.4512C8.29836 10.4882 8.38439 10.5042 8.47021 10.4977C8.55602 10.4912 8.63867 10.4625 8.71 10.4144L10.2744 9.08374Z"
+                      d="M8 2v8.333m0 0l2.667-2.667M8 10.333L5.333 7.667M3.333 13.333h9.334"
                       stroke="currentColor"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2018_3546">
-                      <rect width="16" height="16" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
-                <span className="flex-grow">Zamów telefonicznie</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#000000"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="flex-shrink-0"
-                >
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
-              </a>
+                  </svg>
+                  <span className="flex-grow text-left truncate">
+                    {pdfLoading ? "Generowanie PDF…" : "Pobierz PDF"}
+                  </span>
+                </button>
+              </div>
             </div>
 
             {/* Product description */}
@@ -533,9 +524,9 @@ const ProductDetailSection: React.FC<ProductDetailSectionProps> = ({
                 {parsedTechnicalSpecRows ? (
                   <table className="w-full border-collapse">
                     <tbody>
-                      {parsedTechnicalSpecRows.map((row) => (
+                      {parsedTechnicalSpecRows.map((row, index) => (
                         <tr
-                          key={row.key}
+                          key={`spec-row-${index}`}
                           className="border border-[#D9D9D9] hover:bg-[#fafafa]"
                         >
                           <td className="py-3.5 px-4 text-sm text-[#3D3D3D] align-top break-words max-w-[50%]">

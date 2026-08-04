@@ -1,3 +1,6 @@
+/** Główna domena WordPressa — API i rozwijanie względnych URL-i zdjęć w PDF. */
+export const wordpressSiteOrigin = "https://www.szwagierpozycz.pl";
+
 export const links = {
   homePage: "/",
   contactPage: "/kontakt",

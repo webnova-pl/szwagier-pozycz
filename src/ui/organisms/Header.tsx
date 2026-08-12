@@ -14,7 +14,7 @@ const Header = () => {
           />
         </Link>
       </div>
-      <div className="flex md:space-x-4 max-md:w-full">
+      <div className="flex flex-col md:flex-row md:space-x-4 max-md:w-full max-md:space-y-2">
         <a
           href={links.rental}
           className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center hover:bg-[#F1B426] transition-all max-md:mr-2"
@@ -27,7 +27,14 @@ const Header = () => {
           className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center hover:bg-[#F1B426] transition-colors"
           aria-label="Zakup agregat"
         >
-          Zakup agregat
+          Sprzedaż agregatów
+        </a>
+        <a
+          href={links.rentalBus}
+          className="bg-primary-100 font-bold rounded-[40px] py-4 md:px-6 cursor-pointer w-full whitespace-nowrap text-center hover:bg-[#F1B426] transition-colors"
+          aria-label="Wynajmij busa"
+        >
+          Wynajmij busa
         </a>
         <a
           href={links.contactPage}
